@@ -315,17 +315,17 @@ HOME PAGE PRESENTATION
 }
 
 .col-wrap {
-	background-color: $darkprimarycolor;
+	background-color: $lightprimarycolor;
 	color: $textprimarycolor;
 	margin-bottom: 1em;
 }
 
 #feature-boxes {
+	color: $primarytextcolor;
 	span {
 		background-color: $lightprimarycolor;
 		border-radius: 0.2em;
 		border: 1px solid $primarycolor;
-		color: $secondarytextcolor;
 		font-size: 130%;
 		margin-top: -1em;
 		padding: 0.5em;
@@ -344,6 +344,10 @@ HOME PAGE PRESENTATION
 	&:hover {
 		background: none repeat scroll 0 0 $primarycolor;
 		border-radius: 2px;
+		.feature-icon {
+			background-color: $darkprimarycolor;
+			color: $white;
+		}
 	}
 	.feature-icon {
 		background-color: $white;

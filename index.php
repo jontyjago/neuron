@@ -55,7 +55,7 @@
 					<h2>About Us</h2>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/rob.jpg" alt="" class="alignleft">
 						<p>Founded in 2014 by Robert Hillman, the team at Neuron are experts in the design process and we aim to determine investor requirements and deliver a bespoke product.</p>
-						<nav class="dark-brackets">
+						<nav class="light-brackets">
 							<a href="#">Meet The Team</a>
 						</nav>
 				</div>
