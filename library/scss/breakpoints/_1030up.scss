@@ -1,0 +1,21 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+  width: 1040px;
+}
+
+.presentation {
+	padding: 1em 24em 1em 3em;
+	background: url(../../images/coins.png);
+	background-repeat: no-repeat;
+	background-position: center right;
+}
