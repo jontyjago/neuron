@@ -113,8 +113,8 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
-	font-weight: 600;
-	font-family: $serif;
+	font-weight: 300;
+	font-family: $sans-serif;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -168,6 +168,7 @@ HEADER STYLES
 		a {
 			color: $white;
 			letter-spacing: 0.1em;
+			font-family: $serif;
 		}
 	}
 
@@ -308,15 +309,16 @@ HOME PAGE PRESENTATION
 
 .presentation {
 	padding: 1em 3em;
-	margin-bottom: 2.5em;
+	margin-bottom: 20px;
 	p{
 		text-align: left;
+		margin-bottom: 14px;
 	}
 }
 
 .col-wrap {
 	background-color: $lightprimarycolor;
-	color: $textprimarycolor;
+	color: $primarytextcolor;
 	margin-bottom: 1em;
 }
 
@@ -325,7 +327,7 @@ HOME PAGE PRESENTATION
 	span {
 		background-color: $lightprimarycolor;
 		border-radius: 0.2em;
-		border: 1px solid $primarycolor;
+		border: 1px solid $white;
 		font-size: 130%;
 		margin-top: -1em;
 		padding: 0.5em;
@@ -339,11 +341,14 @@ HOME PAGE PRESENTATION
 	h2 {
 		letter-spacing: 1px;
 		text-align: left;
-		text-shadow: 1px 1px $primarycolor;
+		color: $darkprimarycolor;
 	}
 	&:hover {
 		background: none repeat scroll 0 0 $primarycolor;
 		border-radius: 2px;
+		h2 {
+			color: $white;
+		}
 		.feature-icon {
 			background-color: $darkprimarycolor;
 			color: $white;

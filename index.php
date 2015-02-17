@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<?php 
+// Get the page ids
+$present_id = stripslashes(get_option('present_id'));
+$about_id = stripslashes(get_option('about_id'));
+$contact_id = stripslashes(get_option('contact_id'));
+$research_id = stripslashes(get_option('research_id'));
+
+?>
+
 <div id="content">
 
 	<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -10,9 +19,19 @@
 
 				<div class="presentation">
 					
-					<?php $presentation = stripslashes(get_option('home-present')); ?>
+					<?php
+					// We only want the home page here
+					$query = new WP_Query( 'page_id=' . $present_id );
+					if ( $query -> have_posts() ) :
 
-				<p><?php echo $presentation; ?></p>	
+						/* Start the Loop */
+						while ( $query -> have_posts() ) : $query -> the_post();
+
+							get_template_part( 'content-presentation', get_post_format() );
+
+						endwhile;
+					endif;
+					?>
 
 				</div><!-- end presentation -->
 
@@ -23,48 +42,103 @@
 		<div class="col-wrap cf"><!-- this is for the full-width colour change -->
 			<div class="wrap" id='feature-boxes'>
 				<span>Our Methodology</span>
-				<div class="frame">
-					<div class="bit-2 feature-box top">
-						<h2><i class="icon-rocket feature-icon"></i>Bespoke Designs</h2>
-							<p>Strategies are designed to be bespoke to the investors needs, reflecting their existing investments and risk exposures.</p>
-					</div><!-- end bit-2 -->
-					<div class="bit-2 feature-box top">
-						<h2><i class="icon-magnet feature-icon"></i>Forward-Looking Risk</h2>
-						<p>By exploiting the power that design choices give us we provide extensive forward looking scenario analysis that shows investors exactly what they can expect in the future, not asking them to rely on a single history of past or simulated performance.</p>
-					</div><!-- end bit-2 -->
+					<?php 
+					$args = array(
+						'posts_per_page' => '4',
+						'post_type' => 'methodology',
+						);
 
-				</div><!-- end frame -->
-				<div class="frame">
-					<div class="bit-2 feature-box bottomw">
-						<h2><i class="icon-key feature-icon"></i>Awareness of Systemic Risks</h2>
-						<p>In an increasingly commoditized and rule-based investment world, new risks are arising from the potential herd like algorithmic behaviour of participants. We build in an awareness of these risk into our models. </p>
-					</div><!-- end bit-2 -->
-					<div class="bit-2 feature-box bottom">
-						<h2><i class="icon-asterisk feature-icon"></i>Unique Research Focus</h2>
-						<p>We emphasise that market structures and influences of regulators are constantly shifting the sands, and so our research emphasis is much more oriented to constructive analysis, as opposed to the never ending torture of the limited historical data at our disposal. We believe this gives us a genuinely fresh approach and provides unique insights.</p>
-					</div><!-- end bit-2 -->
-				</div><!-- end frame -->
+			 		$query = new WP_Query( $args );
 
-				</div><!-- end frame -->
+					if ( $query -> have_posts() ) :
+
+						// Loop through the available records
+						while ( $query -> have_posts() ) : $query -> the_post();
+
+							$icon = get_post_meta(get_the_id(), 'neuron_icon', true);
+
+							if ( $query->current_post < 2 ) {
+								$position = 'bit-2 feature-box top';
+							}
+							else {
+								$position = 'bit-2 feature-box bottom';
+							}
+
+							if ( $query->current_post % 2 == 0 ) { ?> <!-- it's even, start of line -->
+								<div class="frame">
+									<div class="<?php echo $position; ?>">
+										<h2><i class="<?php echo $icon; ?> feature-icon"></i><?php the_title(); ?></h2>
+											<?php the_content(); ?>
+									</div><!-- end bit-2 -->
+								<?php }
+							else { //it's odd, end of line ?>
+									<div class="<?php echo $position; ?>">
+										<h2><i class="<?php echo $icon; ?> feature-icon"></i><?php the_title(); ?></h2>
+											<?php the_content(); ?>
+									</div><!-- end bit-2 -->
+								</div><!-- end frame --> 
+							<?php }
+
+						endwhile;
+
+					endif; ?>
+
 			</div><!-- end wrap -->
 		</div><!-- end col-wrap -->
 
 		<div class="wrap" id='feature-boxes'>
 			<div class="frame">
 				<div class="bit-60 home-text entry-content">
-					<h2>About Us</h2>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/rob.jpg" alt="" class="alignleft">
-						<p>Founded in 2014 by Robert Hillman, the team at Neuron are experts in the design process and we aim to determine investor requirements and deliver a bespoke product.</p>
-						<nav class="light-brackets">
-							<a href="#">Meet The Team</a>
-						</nav>
+					<?php
+					// We only want the about page here
+					$query = new WP_Query( 'page_id=' . $about_id );
+					if ( $query -> have_posts() ) :
+
+						/* Start the Loop */
+						while ( $query -> have_posts() ) : $query -> the_post();
+
+							get_template_part( 'content-about', get_post_format() );
+
+						endwhile;
+					endif;
+					?>
 				</div>
 				<div class="bit-40 home-text entry-content">
-					<h2>Our Research</h2>
-					<p>We are constantly refining our research and pushing the envelope - visit our blog for the latest in our cutting-edge writing.</p>
-					<nav class="light-brackets">
-						<a href="#">Visit Blog</a>
-					</nav>
+					<?php
+					// We only want the research page here
+					$query = new WP_Query( 'page_id=' . $research_id );
+					if ( $query -> have_posts() ) :
+
+						/* Start the Loop */
+						while ( $query -> have_posts() ) : $query -> the_post();
+
+							get_template_part( 'content-research', get_post_format() );
+
+						endwhile;
+					endif;
+					?>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-wrap cf">
+			<div class="wrap">
+				<div class="frame entry-content">
+					
+					<?php
+					// We only want the contact page here
+					$query = new WP_Query( 'page_id=' . $contact_id );
+					if ( $query -> have_posts() ) :
+
+						/* Start the Loop */
+						while ( $query -> have_posts() ) : $query -> the_post();
+
+							get_template_part( 'content-contact', get_post_format() );
+
+						endwhile;
+					endif;
+					?>
+
 				</div>
 			</div>
 		</div>

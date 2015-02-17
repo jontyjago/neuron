@@ -16,7 +16,8 @@ require_once( 'library/bones.php' );
 
 //Call the function files
 require_once( 'library/functions/fonts.php' );
-//require_once( 'library/functions/custom-post-type.php' );
+require_once( 'library/functions/custom-posts.php' );
+require_once( 'library/functions/metaboxes.php' );
 require_once( 'library/functions/options.php' );
 
 /*********************
