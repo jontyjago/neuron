@@ -1,13 +1,5 @@
 <h2><?php the_title(); ?></h2>
 
-<div class="bit-30">
-	
-	<?php the_post_thumbnail(); ?>
+<?php the_post_thumbnail('thumbnail'); ?>
 
-</div>
-
-<div class="bit-70">
-	
-	<?php the_content(); ?>
-
-</div>
+<?php the_content(); ?>

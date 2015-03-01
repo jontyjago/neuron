@@ -40,8 +40,8 @@ $research_id = stripslashes(get_option('research_id'));
 		</div><!-- end inner-content wrap -->
 
 		<div class="col-wrap cf"><!-- this is for the full-width colour change -->
-			<div class="wrap" id='feature-boxes'>
-				<span>Our Methodology</span>
+			<div class="wrap feature-boxes" id='methodology'>
+				<!-- <span>Our Methodology</span> -->
 					<?php 
 					$args = array(
 						'posts_per_page' => '4',
@@ -86,9 +86,9 @@ $research_id = stripslashes(get_option('research_id'));
 			</div><!-- end wrap -->
 		</div><!-- end col-wrap -->
 
-		<div class="wrap" id='feature-boxes'>
+		<div class="wrap feature-boxes" id='about'>
 			<div class="frame">
-				<div class="bit-60 home-text entry-content">
+				<div class="bit-60 home-text">
 					<?php
 					// We only want the about page here
 					$query = new WP_Query( 'page_id=' . $about_id );
@@ -103,7 +103,7 @@ $research_id = stripslashes(get_option('research_id'));
 					endif;
 					?>
 				</div>
-				<div class="bit-40 home-text entry-content">
+				<div class="bit-40 home-text">
 					<?php
 					// We only want the research page here
 					$query = new WP_Query( 'page_id=' . $research_id );
@@ -123,7 +123,7 @@ $research_id = stripslashes(get_option('research_id'));
 
 		<div class="col-wrap cf">
 			<div class="wrap">
-				<div class="frame entry-content">
+				<div class="frame home-text" id='contact'>
 					
 					<?php
 					// We only want the contact page here

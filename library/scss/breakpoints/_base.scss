@@ -17,16 +17,12 @@ GENERAL STYLES
 
 body {
 	font-family: $sans-serif;
-	font-size: 100%;
+	font-size: 18px;
 	line-height: 1.5;
 	color: $text-color;
 	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
-}
-
-p {
-	font-size: 110%;
 }
 
 /********************
@@ -127,18 +123,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
+	font-size: 1.999em;
 	line-height: 1.333em;
 }
 
 h2, .h2 {
-	font-size: 1.75em;
-	line-height: 1.4em;
+	font-size: 1.414em;
 	margin-bottom: 0.375em;
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 1.12em;
 }
 
 h4, .h4 {
@@ -163,12 +158,11 @@ HEADER STYLES
 
 	#logo {
 		margin: 0.5em 0 0 0;
-		font-size: 1.5em;
-
 		a {
 			color: $white;
 			letter-spacing: 0.1em;
 			font-family: $serif;
+			font-size: 80%;
 		}
 	}
 
@@ -298,7 +292,7 @@ and more scalable.
 	a {
 		margin-right: 3em;
 		color: $lightprimarycolor;
-		font-size: 120%;
+		font-size: 1.414em;
 		text-decoration: none;
 	}
 }
@@ -308,11 +302,18 @@ HOME PAGE PRESENTATION
 *********************/
 
 .presentation {
-	padding: 1em 3em;
+	padding: 10px 10px;
 	margin-bottom: 20px;
 	p{
-		text-align: left;
+		// text-align: left;
 		margin-bottom: 14px;
+		// float: left;
+	}
+	.presentation-img {
+		display: none;
+	}
+	.presentation-text {
+		margin-bottom: 20px;
 	}
 }
 
@@ -322,13 +323,13 @@ HOME PAGE PRESENTATION
 	margin-bottom: 1em;
 }
 
-#feature-boxes {
+.feature-boxes {
 	color: $primarytextcolor;
 	span {
 		background-color: $lightprimarycolor;
 		border-radius: 0.2em;
 		border: 1px solid $white;
-		font-size: 130%;
+		font-size: 1.414em;
 		margin-top: -1em;
 		padding: 0.5em;
 		position: absolute;
@@ -364,18 +365,20 @@ HOME PAGE PRESENTATION
 	}
 }
 .top {
-	margin-top: 2em;
+	margin-top: 0.354em;
 }
 .bottom {
-	margin-bottom: 1em;
+	margin-bottom: 0.717em;
 }
 .home-text {
+	padding: 1em;
 	img {
-		width: 200px;
 		border-radius: 0.2em;
+		float: left;
+		margin: 0.354em 1em 0.354em 0.354em;
 	}
 	p {
-		display: inline;
+		margin: 0 0 1.414em;
 	}
 }
 
@@ -446,7 +449,7 @@ POSTS & CONTENT STYLES
 
 		/* entry content */
 		.entry-content {
-			padding: 1.5em 1.5em 0;
+			padding: 0.717em 0.717em 0;
 
 			p {
 				margin: 0 0 1.5em;

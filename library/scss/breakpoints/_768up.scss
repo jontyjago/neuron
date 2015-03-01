@@ -36,6 +36,16 @@ HEADER STYLES
 		font-size: 2.5em;
 	}
 }
+/*********************
+FRONT PAGE STYLES
+*********************/
+.presentation {
+	padding: 10px 30px;
+	.presentation-img {
+		display: inline;
+		float: right;
+	}
+}
 
 /*********************
 NAVIGATION STYLES
