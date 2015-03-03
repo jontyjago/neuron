@@ -33,7 +33,10 @@ HEADER STYLES
 
 .header {
 	#logo {
-		font-size: 2.5em;
+		font-size: 2.25em;
+		a {
+			font-family: $logo-font;
+		}
 	}
 }
 /*********************
@@ -156,7 +159,7 @@ NAVIGATION STYLES
 }
 
 // As the screen gets bigger, only show the top nav and the footer nav
-.mobile-nav {
+#bottom-nav {
 	display: none;
 }
 .top-nav {

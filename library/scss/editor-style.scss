@@ -35,7 +35,7 @@ body#tinymce.wp-editor {
 	font-family: $sans-serif;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text-color;
+	color: $primarytextcolor;
   -webkit-font-smoothing: antialiased;
 
   /*********************
@@ -43,11 +43,11 @@ body#tinymce.wp-editor {
 	*********************/
 
 	a, a:visited {
-		color: $link-color;
+		color: $primarycolor;
 
 		/* on hover */
 		&:hover, &:focus {
-			color: $link-hover;
+			color: $primarycolor;
 		}
 
 		/* on click */

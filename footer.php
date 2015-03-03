@@ -3,7 +3,8 @@
 				<div id="inner-footer" class="wrap cf frame">
 
 					<div class="bit-3 footer-text">
-						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+						<p id="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+						<p id="site-by">Site by <a href="http://www.jontyjago.com">Jonathan Evans</a> </p>
 					</div><!-- end bit3 -->
 
 					<div class="bit-3 footer-text footer-icons">

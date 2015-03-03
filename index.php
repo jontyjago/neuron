@@ -6,6 +6,7 @@ $present_id = stripslashes(get_option('present_id'));
 $about_id = stripslashes(get_option('about_id'));
 $contact_id = stripslashes(get_option('contact_id'));
 $research_id = stripslashes(get_option('research_id'));
+$home_posts = stripslashes(get_option('home_posts'));
 
 ?>
 
@@ -40,7 +41,7 @@ $research_id = stripslashes(get_option('research_id'));
 		</div><!-- end inner-content wrap -->
 
 		<div class="col-wrap cf"><!-- this is for the full-width colour change -->
-			<div class="wrap feature-boxes" id='methodology'>
+			<div class="wrap" id='methodology'>
 				<!-- <span>Our Methodology</span> -->
 					<?php 
 					$args = array(
@@ -86,67 +87,93 @@ $research_id = stripslashes(get_option('research_id'));
 			</div><!-- end wrap -->
 		</div><!-- end col-wrap -->
 
-		<div class="wrap feature-boxes" id='about'>
-			<div class="frame">
-				<div class="bit-60 home-text">
-					<?php
-					// We only want the about page here
-					$query = new WP_Query( 'page_id=' . $about_id );
-					if ( $query -> have_posts() ) :
 
-						/* Start the Loop */
-						while ( $query -> have_posts() ) : $query -> the_post();
-
-							get_template_part( 'content-about', get_post_format() );
-
-						endwhile;
-					endif;
-					?>
-				</div>
-				<div class="bit-40 home-text">
+		
+		<div class="wrap" id='research'>
+			<div class='frame'>
+				<div class="bit-1 home-text">
 					<?php
 					// We only want the research page here
 					$query = new WP_Query( 'page_id=' . $research_id );
 					if ( $query -> have_posts() ) :
-
+				
 						/* Start the Loop */
 						while ( $query -> have_posts() ) : $query -> the_post();
-
+				
 							get_template_part( 'content-research', get_post_format() );
-
+				
 						endwhile;
 					endif;
+
+					$args = array(
+						'posts_per_page' => $home_posts,
+						);
+
+			 		$query = new WP_Query( $args );
+
+					if ( $query -> have_posts() ) :
+
+						// Loop through the available records
+						while ( $query -> have_posts() ) : $query -> the_post(); ?>
+							<div class="<?php echo 'bit-' . $home_posts; ?>">
+								<?php get_template_part( 'content-latest-posts', get_post_format() ); ?>
+							</div>
+						<?php endwhile;
+					endif;
+
+
 					?>
 				</div>
 			</div>
 		</div>
 
 		<div class="col-wrap cf">
-			<div class="wrap">
-				<div class="frame home-text" id='contact'>
-					
-					<?php
-					// We only want the contact page here
-					$query = new WP_Query( 'page_id=' . $contact_id );
-					if ( $query -> have_posts() ) :
+			<div class="wrap" id='about'>
+				<div class="frame">
+					<div class="bit-1 home-text">
+						<?php
+						// We only want the about page here
+						$query = new WP_Query( 'page_id=' . $about_id );
+						if ( $query -> have_posts() ) :
 
-						/* Start the Loop */
-						while ( $query -> have_posts() ) : $query -> the_post();
+							/* Start the Loop */
+							while ( $query -> have_posts() ) : $query -> the_post();
 
-							get_template_part( 'content-contact', get_post_format() );
+								get_template_part( 'content-about', get_post_format() );
 
-						endwhile;
-					endif;
-					?>
-
+							endwhile;
+						endif;
+						?>
+					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="wrap">
+			<div class="frame" id='contact'>
+				
+				<?php
+				// We only want the contact page here
+				$query = new WP_Query( 'page_id=' . $contact_id );
+				if ( $query -> have_posts() ) :
+
+					/* Start the Loop */
+					while ( $query -> have_posts() ) : $query -> the_post();
+
+						get_template_part( 'content-contact', get_post_format() );
+
+					endwhile;
+				endif;
+				?>
+
 			</div>
 		</div>
 
 	</main>
 
-	<div class="wrap cf frame" id="bottom-nav">	
+	<div class="wrap cf frame" id="bottom-nav">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<h2>Menu</h2>
 			<?php wp_nav_menu(array(
 			         'container' => false,                           // remove nav container
 			         'container_class' => 'menu cf',                 // class of container (should you choose to use it)

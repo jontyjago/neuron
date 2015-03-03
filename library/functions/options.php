@@ -30,6 +30,17 @@ function neuron_options_page() {
         <h3>Page IDs</h3>
         <p>Used to show the content on the home page. <strong><em>Do not</em></strong> change these unless you know what you're doing.</p>
         <h3>Presentation</h3>
+<!--         <select name="page-dropdown">
+            <option value="">
+            <?php echo esc_attr( __( 'Select page' ) ); ?></option> 
+                <?php $pages = get_pages(); 
+                foreach ( $pages as $page ) {
+                    $option = '<option value="' . $page->ID . '">';
+                    $option .= $page->post_title;
+                    $option .= '</option>';
+                    echo $option;
+                } ?>
+        </select> -->
         <input type="number" name="present_id" id="present_id" size="8" value="<?php esc_attr_e( get_option( 'present_id' ) ); ?>" required />
         <h3>Contact</h3>
         <input type="number" name="contact_id" id="contact_id" size="8" value="<?php esc_attr_e( get_option( 'contact_id' ) ); ?>" required />
@@ -37,10 +48,14 @@ function neuron_options_page() {
         <input type="number" name="about_id" id="about_id" size="8" value="<?php esc_attr_e( get_option( 'about_id' ) ); ?>" required />
         <h3>Research</h3>
         <input type="number" name="research_id" id="research_id" size="8" value="<?php esc_attr_e( get_option( 'research_id' ) ); ?>" required />
+        <h3>Recent Posts on Home Page</h3>
+        <p>Pick a number between 1 and 4</p>
+        <input type="number" name="home_posts" id="home_posts" size="8" value="<?php esc_attr_e( get_option( 'home_posts' ) ); ?>" required />
 
         <!-- submit button -->
         <p><input type="submit" name="search" value="Update Options" class="button" /></p>
     </form>
+
 </div>
 
 <?php
@@ -52,4 +67,5 @@ function neuron_options_update() {
     update_option( 'contact_id', stripslashes($_POST['contact_id']) );
     update_option( 'about_id', stripslashes($_POST['about_id']) );
     update_option( 'research_id', stripslashes($_POST['research_id']) );
+    update_option( 'home_posts', stripslashes($_POST['home_posts']) );
 }

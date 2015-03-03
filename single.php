@@ -12,7 +12,7 @@
 
               				<header class="article-header">
                   				<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-                  				<p class="art-date"><i class="icon-calendar"></i>2nd Dec 2014</p>
+                  				<p class="art-date"><i class="icon-calendar"></i><?php the_date(); ?></p>
 							</header> <?php // end article header ?>
 							<section class="entry-content cf" itemprop="articleBody">
                   				<?php the_content(); ?>

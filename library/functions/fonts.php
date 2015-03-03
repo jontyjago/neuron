@@ -11,7 +11,7 @@ just didn't work for me, so I use this one.
 function load_fonts() {
   	//Removed Lato - going with Source Sans Pro
 	//wp_register_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Slabo+27px:400' );
-  	wp_register_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Slabo+27px:400|Source+Sans+Pro:300,400,700,400italic' );
+  	wp_register_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Raleway:100|Source+Sans+Pro:200,300,400,700,400italic' );
   	wp_enqueue_style( 'googleFonts' );
 }
 
