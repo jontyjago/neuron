@@ -308,6 +308,38 @@ and more scalable.
 }
 
 /*********************
+DISCLAIMER MODAL
+*********************/
+
+.disclaimer {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $lightprimarycolor;
+	color: $primarytextcolor;
+	margin: auto;
+	display: none;
+	a {
+		color: $white;
+	}
+	#site-ident {
+		margin-top: 0;
+		background-color: $darkprimarycolor;
+		padding: 0.5em 1em;
+	}
+	.disclaimer-text {
+		font-size: 0.846em;
+		padding: 0 1.5em;
+		margin-top: 1em;
+	}
+	.ok-button{
+		margin-left: 35%;
+	}
+}
+
+/*********************
 HOME PAGE PRESENTATION
 *********************/
 
@@ -1088,7 +1120,7 @@ view.
 	}
 }
 
-#disclaimer {
+#disclaimer-foot {
 	color: $lightprimarycolor;
 	a {
 		color: $accentcolor;

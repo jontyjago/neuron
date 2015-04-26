@@ -34,7 +34,7 @@
 				</div><!-- end inner-footer frame -->
 
 				<div class="wrap cf frame">
-					<div class="bit-1" id="disclaimer">
+					<div class="bit-1" id="disclaimer-foot">
 						<p>The information on this website does not constitute the provision of investment advice or an offer for sale. Please read the <a href="<?php echo home_url(). '/disclaimer'; ?>">full disclaimer</a>.</p>
 					</div><!-- end disclaimer -->
 				</div><!-- end frame -->

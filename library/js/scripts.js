@@ -116,5 +116,19 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+  $('.ok-button').on('click', function(){
+      // make cookie that sets clickedok var to true
+      document.cookie = "clickedok=true; max-age=" + 60 * 60 * 24 * 10; // the '10' is how many days
+      $('.disclaimer').hide(); $('.sticky').show();
+  })
+
+  if (/(^|;)\s*clickedok=/.test(document.cookie)) {
+      // person has been to the site before and clicked 'OK' so....
+         // dont do anything
+  } else {
+      //person has never been to the site before or hasnt clicked 'OK' on the disclaimer. so...
+      $('.disclaimer').show(); $('.sticky').hide(); // show disclaimer again
+  }
+
 
 }); /* end of as page load scripts */

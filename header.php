@@ -44,13 +44,32 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
+	<div class="disclaimer">
+		<?php
+		$disclaimer_id = stripslashes(get_option('disclaimer_id'));
+		// We only want the home page here
+		$query = new WP_Query( 'page_id=' . $disclaimer_id );
+		if ( $query -> have_posts() ) :
+
+			/* Start the Loop */
+			while ( $query -> have_posts() ) : $query -> the_post();
+
+				get_template_part( 'content-disclaimer', get_post_format() );
+
+			endwhile;
+		endif;
+		?>
+	</div>
+
 		<div id="container">
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
+
 				<div id="inner-header" class="wrap cf frame">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+
 					<div id="site-ident">
 						<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><!-- <i class="icon-cogs logo-icon"></i> -->
 						<a href="<?php echo home_url(); ?>" rel="nofollow"><?php /*bloginfo('name');*/ ?>Neu<span class='r-span'>r</span>on</a></p>

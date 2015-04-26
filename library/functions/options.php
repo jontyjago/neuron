@@ -48,6 +48,8 @@ function neuron_options_page() {
         <input type="number" name="about_id" id="about_id" size="8" value="<?php esc_attr_e( get_option( 'about_id' ) ); ?>" required />
         <h3>Research</h3>
         <input type="number" name="research_id" id="research_id" size="8" value="<?php esc_attr_e( get_option( 'research_id' ) ); ?>" required />
+        <h3>Disclaimer</h3>
+        <input type="number" name="disclaimer_id" id="disclaimer_id" size="8" value="<?php esc_attr_e( get_option( 'disclaimer_id' ) ); ?>" required />
         <h3>Recent Posts on Home Page</h3>
         <p>Pick a number between 1 and 4</p>
         <input type="number" name="home_posts" id="home_posts" size="8" value="<?php esc_attr_e( get_option( 'home_posts' ) ); ?>" required />
@@ -67,5 +69,6 @@ function neuron_options_update() {
     update_option( 'contact_id', stripslashes($_POST['contact_id']) );
     update_option( 'about_id', stripslashes($_POST['about_id']) );
     update_option( 'research_id', stripslashes($_POST['research_id']) );
+    update_option( 'disclaimer_id', stripslashes($_POST['disclaimer_id']) );
     update_option( 'home_posts', stripslashes($_POST['home_posts']) );
 }

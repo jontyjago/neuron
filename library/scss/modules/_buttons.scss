@@ -37,11 +37,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   border-radius: 4px;
   border: 0;
   cursor: pointer;
-  @include transition(background-color 0.14s ease-in-out);
+  //@include transition(background-color 0.14s ease-in-out);
 
   // hovering on the btn
   &:hover, &:focus {
-    color: $lightprimarycolor;
+    color: $darkprimarycolor;
     text-decoration: none;
   } // end hover
 
@@ -57,14 +57,15 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn {
+.primary-btn {
   @extend %btn; // here we load the btn defaults
   background-color: $primarycolor;
+  color: $white;
 
-  &:hover,
-  &:focus {
-    background-color: $darkprimarycolor;
-  } // end hover
+  //&:hover,
+  //&:focus {
+    //background-color: $darkprimarycolor;
+  //} // end hover
 
   &:active {
     background-color: $darkprimarycolor;
