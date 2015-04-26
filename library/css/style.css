@@ -1727,7 +1727,6 @@ HEADER STYLES
 }
 /* line 171, ../scss/breakpoints/_base.scss */
 #logo .r-span {
-  background-color: #545454;
   color: #ffc107;
 }
 
@@ -2452,15 +2451,16 @@ FOOTER STYLES
 /* line 1043, ../scss/breakpoints/_base.scss */
 .footer-text {
   margin: 1em 0;
+  text-align: right;
 }
 
-/* line 1047, ../scss/breakpoints/_base.scss */
+/* line 1048, ../scss/breakpoints/_base.scss */
 .footer-icons a {
   text-decoration: none;
   font-size: 130%;
   color: #cfd8dc;
 }
-/* line 1052, ../scss/breakpoints/_base.scss */
+/* line 1053, ../scss/breakpoints/_base.scss */
 .footer-icons a:hover {
   color: #ffc107;
 }
@@ -2475,23 +2475,36 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
-/* line 1076, ../scss/breakpoints/_base.scss */
+/* line 1077, ../scss/breakpoints/_base.scss */
 #copyright {
   font-size: 1em;
 }
 
-/* line 1079, ../scss/breakpoints/_base.scss */
+/* line 1080, ../scss/breakpoints/_base.scss */
 #site-by {
   font-size: 0.717em;
   color: #455a64;
 }
-/* line 1082, ../scss/breakpoints/_base.scss */
+/* line 1083, ../scss/breakpoints/_base.scss */
 #site-by a {
   color: #455a64;
 }
-/* line 1084, ../scss/breakpoints/_base.scss */
+/* line 1085, ../scss/breakpoints/_base.scss */
 #site-by a:hover {
   color: #cfd8dc;
+}
+
+/* line 1091, ../scss/breakpoints/_base.scss */
+#disclaimer {
+  color: #cfd8dc;
+}
+/* line 1093, ../scss/breakpoints/_base.scss */
+#disclaimer a {
+  color: #ffc107;
+}
+/* line 1095, ../scss/breakpoints/_base.scss */
+#disclaimer a:hover {
+  color: #455a64;
 }
 
 /*********************
@@ -2690,8 +2703,8 @@ you can add resource intensive styles.
   }
   /* line 75, ../scss/breakpoints/_768up.scss */
   .nav li a:hover, .nav li a:focus {
-    color: #cfd8dc;
-    background-color: #ffc107;
+    color: #455a64;
+    background-color: #cfd8dc;
     border-radius: 0.2em;
   }
   /* line 89, ../scss/breakpoints/_768up.scss */
@@ -2741,22 +2754,27 @@ you can add resource intensive styles.
   }
 
   /* end .nav */
-  /* line 162, ../scss/breakpoints/_768up.scss */
+  /* line 158, ../scss/breakpoints/_768up.scss */
   #bottom-nav {
     display: none;
   }
 
-  /* line 165, ../scss/breakpoints/_768up.scss */
+  /* line 161, ../scss/breakpoints/_768up.scss */
   .top-nav {
     display: inline;
   }
 
-  /* line 168, ../scss/breakpoints/_768up.scss */
+  /* line 164, ../scss/breakpoints/_768up.scss */
   .footer-nav {
     display: inline;
+    float: left;
+  }
+  /* line 168, ../scss/breakpoints/_768up.scss */
+  .footer-nav li a {
+    color: #cfd8dc;
   }
 
-  /* line 171, ../scss/breakpoints/_768up.scss */
+  /* line 173, ../scss/breakpoints/_768up.scss */
   #nav-link {
     display: none;
   }
@@ -2764,28 +2782,28 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 179, ../scss/breakpoints/_768up.scss */
+  /* line 181, ../scss/breakpoints/_768up.scss */
   .sidebar {
     margin-top: 2.2em;
   }
 
-  /* line 183, ../scss/breakpoints/_768up.scss */
+  /* line 185, ../scss/breakpoints/_768up.scss */
   .widgettitle {
     border-bottom: 2px solid #444;
     margin-bottom: 0.75em;
   }
 
-  /* line 188, ../scss/breakpoints/_768up.scss */
+  /* line 190, ../scss/breakpoints/_768up.scss */
   .widget {
     padding: 0 10px;
     margin: 2.2em 0;
   }
-  /* line 193, ../scss/breakpoints/_768up.scss */
+  /* line 195, ../scss/breakpoints/_768up.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 201, ../scss/breakpoints/_768up.scss */
+  /* line 203, ../scss/breakpoints/_768up.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -2810,7 +2828,7 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 309, ../scss/breakpoints/_768up.scss */
+  /* line 311, ../scss/breakpoints/_768up.scss */
   .footer-links ul li {
     /*
     be careful with the depth of your menus.

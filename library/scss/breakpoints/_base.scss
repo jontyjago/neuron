@@ -169,7 +169,7 @@ HEADER STYLES
 			font-weight: 100;
 		}
 		.r-span {
-			background-color: $dark-gray;
+			//background-color: $dark-gray;
 			color: $accentcolor;
 		}
 	}
@@ -1042,6 +1042,7 @@ FOOTER STYLES
 }
 .footer-text {
 	margin: 1em 0;
+	text-align: right;
 }
 .footer-icons{
 	a{
@@ -1083,6 +1084,16 @@ view.
 		color: $darkprimarycolor;
 		&:hover {
 			color: $lightprimarycolor;
+		}
+	}
+}
+
+#disclaimer {
+	color: $lightprimarycolor;
+	a {
+		color: $accentcolor;
+		&:hover {
+			color: $darkprimarycolor;
 		}
 	}
 }

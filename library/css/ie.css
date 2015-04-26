@@ -344,8 +344,8 @@ NAVIGATION STYLES
 }
 /* line 75, ../scss/breakpoints/_768up.scss */
 .nav li a:hover, .nav li a:focus {
-  color: #cfd8dc;
-  background-color: #ffc107;
+  color: #455a64;
+  background-color: #cfd8dc;
   border-radius: 0.2em;
 }
 /* line 89, ../scss/breakpoints/_768up.scss */
@@ -395,22 +395,27 @@ NAVIGATION STYLES
 }
 
 /* end .nav */
-/* line 162, ../scss/breakpoints/_768up.scss */
+/* line 158, ../scss/breakpoints/_768up.scss */
 #bottom-nav {
   display: none;
 }
 
-/* line 165, ../scss/breakpoints/_768up.scss */
+/* line 161, ../scss/breakpoints/_768up.scss */
 .top-nav {
   display: inline;
 }
 
-/* line 168, ../scss/breakpoints/_768up.scss */
+/* line 164, ../scss/breakpoints/_768up.scss */
 .footer-nav {
   display: inline;
+  float: left;
+}
+/* line 168, ../scss/breakpoints/_768up.scss */
+.footer-nav li a {
+  color: #cfd8dc;
 }
 
-/* line 171, ../scss/breakpoints/_768up.scss */
+/* line 173, ../scss/breakpoints/_768up.scss */
 #nav-link {
   display: none;
 }
@@ -418,28 +423,28 @@ NAVIGATION STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 179, ../scss/breakpoints/_768up.scss */
+/* line 181, ../scss/breakpoints/_768up.scss */
 .sidebar {
   margin-top: 2.2em;
 }
 
-/* line 183, ../scss/breakpoints/_768up.scss */
+/* line 185, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 188, ../scss/breakpoints/_768up.scss */
+/* line 190, ../scss/breakpoints/_768up.scss */
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
-/* line 193, ../scss/breakpoints/_768up.scss */
+/* line 195, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 201, ../scss/breakpoints/_768up.scss */
+/* line 203, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -464,7 +469,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 309, ../scss/breakpoints/_768up.scss */
+/* line 311, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.

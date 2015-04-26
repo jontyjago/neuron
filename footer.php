@@ -2,18 +2,7 @@
 
 				<div id="inner-footer" class="wrap cf frame">
 
-					<div class="bit-3 footer-text">
-						<p id="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
-						<p id="site-by">Site by <a href="http://www.jontyjago.com">Jonathan Evans</a> </p>
-					</div><!-- end bit3 -->
-
-					<div class="bit-3 footer-text footer-icons">
-						<a href="#"><i class="icon-twitter"></i></a>
-						<a href="#"><i class="icon-linkedin-sign"></i></a>
-					</div><!-- end bit3 -->
-
 					<div class="bit-3">
-						
 						<nav role="navigation">
 							<?php wp_nav_menu(array(
 	    					'container' => '',                              // remove nav container
@@ -29,11 +18,27 @@
 	    					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
 							)); ?>
 						</nav>
-
+					</div><!-- end bit3 -->
+					
+					<div class="bit-3 footer-text">
+						<!-- <a href="#"><i class="icon-twitter"></i></a>
+						<a href="#"><i class="icon-linkedin-sign"></i></a> -->
+						<?php get_template_part('content-contact-static'); ?>
 					</div><!-- end bit3 -->
 
-				</div>
+					<div class="bit-3 footer-text">
+						<p id="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+						<p id="site-by">Site by <a href="http://www.jontyjago.com">Jonathan Evans</a> </p>
+					</div><!-- end bit3 -->
 
+				</div><!-- end inner-footer frame -->
+
+				<div class="wrap cf frame">
+					<div class="bit-1" id="disclaimer">
+						<p>The information on this website does not constitute the provision of investment advice or an offer for sale. Please read the <a href="<?php echo home_url(). '/disclaimer'; ?>">full disclaimer</a>.</p>
+					</div><!-- end disclaimer -->
+				</div><!-- end frame -->
+			
 			</footer>
 
 		</div>

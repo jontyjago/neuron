@@ -73,8 +73,8 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $lightprimarycolor;
-				background-color: $accentcolor;
+				color: $darkprimarycolor;
+				background-color: $lightprimarycolor;
 				border-radius: 0.2em;
 			}
 		}
@@ -154,10 +154,6 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
-.footer-nav{
-	
-}
-
 // As the screen gets bigger, only show the top nav and the footer nav
 #bottom-nav {
 	display: none;
@@ -167,6 +163,12 @@ NAVIGATION STYLES
 }
 .footer-nav{
 	display: inline;
+	float: left;
+	li {
+		a{
+			color: $lightprimarycolor;
+		}
+	}
 }
 #nav-link {
 	display: none;

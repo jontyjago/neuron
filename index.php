@@ -18,7 +18,7 @@ $home_posts = stripslashes(get_option('home_posts'));
 
 			<div class="frame">
 
-				<div class="presentation">
+				<div class="presentation bit-1">
 					
 					<?php
 					// We only want the home page here
@@ -144,7 +144,7 @@ $home_posts = stripslashes(get_option('home_posts'));
 							endwhile;
 						endif;
 						?>
-					</div>
+					</div><!-- end bit1-->
 				</div>
 			</div>
 		</div>
@@ -152,19 +152,21 @@ $home_posts = stripslashes(get_option('home_posts'));
 		<div class="wrap">
 			<div class="frame" id='contact'>
 				
-				<?php
-				// We only want the contact page here
-				$query = new WP_Query( 'page_id=' . $contact_id );
-				if ( $query -> have_posts() ) :
-
-					/* Start the Loop */
-					while ( $query -> have_posts() ) : $query -> the_post();
-
-						get_template_part( 'content-contact', get_post_format() );
-
-					endwhile;
-				endif;
-				?>
+				<div class="bit-1">
+					<?php
+					// We only want the contact page here
+					$query = new WP_Query( 'page_id=' . $contact_id );
+					if ( $query -> have_posts() ) :
+					
+						/* Start the Loop */
+						while ( $query -> have_posts() ) : $query -> the_post();
+					
+							get_template_part( 'content-contact', get_post_format() );
+					
+						endwhile;
+					endif;
+					?>
+				</div><!-- end bit-1 -->
 
 			</div>
 		</div>
@@ -173,7 +175,6 @@ $home_posts = stripslashes(get_option('home_posts'));
 
 	<div class="wrap cf frame" id="bottom-nav">
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-		<h2>Menu</h2>
 			<?php wp_nav_menu(array(
 			         'container' => false,                           // remove nav container
 			         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
