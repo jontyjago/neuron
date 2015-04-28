@@ -100,13 +100,14 @@ $home_posts = stripslashes(get_option('home_posts'));
 						/* Start the Loop */
 						while ( $query -> have_posts() ) : $query -> the_post();
 				
-							get_template_part( 'content-research', get_post_format() );
+							get_template_part( 'content-research-home', get_post_format() );
 				
 						endwhile;
 					endif;
 
 					$args = array(
 						'posts_per_page' => $home_posts,
+						'post_type' => 'research',
 						);
 
 			 		$query = new WP_Query( $args );
@@ -119,10 +120,7 @@ $home_posts = stripslashes(get_option('home_posts'));
 								<?php get_template_part( 'content-latest-posts', get_post_format() ); ?>
 							</div>
 						<?php endwhile;
-					endif;
-
-
-					?>
+					endif; ?>
 				</div>
 			</div>
 		</div>

@@ -131,7 +131,7 @@ jQuery(document).ready(function($) {
       //person has never been to the site before or hasnt clicked 'OK' on the disclaimer. so...
       $('.disclaimer').show(); 
       $('.sticky').hide();
-      $('body').addClass('disclamer-open'); // show disclaimer again
+      //$('body').addClass('disclamer-open'); // show disclaimer again
   }
 
 
