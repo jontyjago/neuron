@@ -119,7 +119,9 @@ jQuery(document).ready(function($) {
   $('.ok-button').on('click', function(){
       // make cookie that sets clickedok var to true
       document.cookie = "clickedok=true; max-age=" + 60 * 60 * 24 * 10; // the '10' is how many days
-      $('.disclaimer').hide(); $('.sticky').show();
+      $('.disclaimer').hide(); 
+      $('.sticky').show();
+      $('.body').removeClass('disclamer-open');
   })
 
   if (/(^|;)\s*clickedok=/.test(document.cookie)) {
@@ -127,7 +129,9 @@ jQuery(document).ready(function($) {
          // dont do anything
   } else {
       //person has never been to the site before or hasnt clicked 'OK' on the disclaimer. so...
-      $('.disclaimer').show(); $('.sticky').hide(); // show disclaimer again
+      $('.disclaimer').show(); 
+      $('.sticky').hide();
+      $('body').addClass('disclamer-open'); // show disclaimer again
   }
 
 

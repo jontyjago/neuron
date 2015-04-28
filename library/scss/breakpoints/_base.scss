@@ -321,6 +321,7 @@ DISCLAIMER MODAL
 	color: $primarytextcolor;
 	margin: auto;
 	display: none;
+	overflow: scroll;
 	a {
 		color: $white;
 	}
@@ -335,8 +336,14 @@ DISCLAIMER MODAL
 		margin-top: 1em;
 	}
 	.ok-button{
+		margin-top: 1em;
 		margin-left: 35%;
+		margin-bottom: 2em;
 	}
+}
+.disclamer-open{
+	z-index:999;
+	overflow:hidden;
 }
 
 /*********************
@@ -419,6 +426,7 @@ HOME PAGE PRESENTATION
 	}
 }
 #contact {
+	display: none;
 	padding: 1em;
 	form {
 		background-color: $lightprimarycolor;
@@ -941,7 +949,7 @@ COMMENT STYLES
 
 	/* comment reply link */
 	.comment-reply-link {
-		@extend .blue-btn;
+		@extend .primary-btn;
 		font-size: 0.9em;
 		float: right;
 
@@ -997,7 +1005,7 @@ COMMENT FORM STYLES
 
 	/* comment submit button */
 	#submit {
-		@extend .blue-btn;
+		@extend .primary-btn;
 		float: right;
 		font-size: 1em;
 	}

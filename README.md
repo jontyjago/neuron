@@ -1,14 +1,18 @@
 # neuron
 
 Author: Jonathan Evans
-Version: 1.0
+Version History:
 
-Address
-Phone Number
+Initial:	Feb 11th 2015
+1.0:		March 3rd		Demo version
+1.1:		April 26th		Footer and bits updated
+1.2: 		April 27th		Added Disclaimer
+1.2.1: 		April 28th		Fixed scrolling issue in disclaimer
+
+To do list:
 Link to interview - neuron in the media.
 Client list?
 Case studies?
 Cookie
-mail in footer
 contact - google maps
 linked in
